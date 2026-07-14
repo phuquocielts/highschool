@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing Task 2 — Problem & Solution | N.D.N -0932067877</title>
+<style>
+:root{
+  --navy:#16324f;
+  --navy-deep:#0e2338;
+  --navy-soft:#274b70;
+  --ice:#eef3f8;
+  --card:#ffffff;
+  --gold:#d9a441;
+  --gold-soft:#f6e8cd;
+  --prob:#b5484d;
+  --prob-bg:#faeaea;
+  --sol:#2e7d5b;
+  --sol-bg:#e6f3ed;
+  --ink:#22303e;
+  --muted:#5d7185;
+  --line:#d7e1ec;
+  --radius:14px;
+  --shadow:0 2px 10px rgba(22,50,79,.08);
+  --serif:'Times New Roman','Noto Serif',Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--ice);color:var(--ink);line-height:1.65}
+.vi{color:var(--muted);font-style:italic}
+.ipa{font-family:var(--serif);color:#7a5ba0;font-size:.92em;white-space:nowrap}
+
+/* ===== Header ===== */
+header{background:linear-gradient(135deg,var(--navy-deep),var(--navy) 55%,var(--navy-soft));color:#fff;padding:34px 20px 30px;text-align:center}
+.brand{display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(217,164,65,.5);border-radius:999px;padding:5px 16px;margin-bottom:14px}
+header h1{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.3rem);letter-spacing:.01em}
+header h1 .swap{color:var(--gold)}
+header .sub{margin-top:8px;opacity:.85;font-size:.95rem}
+
+/* ===== Nav ===== */
+nav{position:sticky;top:0;z-index:50;background:var(--navy-deep);display:flex;justify-content:center;flex-wrap:wrap;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+nav button{background:none;border:none;color:#cfdceb;font-family:var(--sans);font-size:.86rem;padding:13px 16px;cursor:pointer;border-bottom:3px solid transparent;transition:.18s}
+nav button:hover{color:#fff}
+nav button.active{color:var(--gold);border-bottom-color:var(--gold);font-weight:600}
+nav button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+
+/* ===== Layout ===== */
+main{max-width:960px;margin:0 auto;padding:28px 18px 70px}
+section.tab{display:none;animation:fade .35s ease}
+section.tab.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h2.sec-title{font-family:var(--serif);color:var(--navy);font-size:1.55rem;margin:6px 0 4px}
+p.sec-sub{color:var(--muted);margin-bottom:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:20px}
+.card h3{color:var(--navy);font-size:1.08rem;margin-bottom:10px}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 9px;margin-bottom:8px}
+.tag.type-a{background:var(--gold-soft);color:#8a6413}
+.tag.type-b{background:var(--sol-bg);color:var(--sol)}
+.tag.type-c{background:var(--prob-bg);color:var(--prob)}
+.qbox{background:var(--ice);border-left:4px solid var(--navy);border-radius:8px;padding:12px 16px;margin:10px 0;font-family:var(--serif);font-size:1.02rem}
+.note{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin:12px 0;font-size:.93rem}
+.warn{background:var(--prob-bg);border-left:4px solid var(--prob);border-radius:8px;padding:12px 16px;margin:12px 0;font-size:.93rem}
+.good{background:var(--sol-bg);border-left:4px solid var(--sol);border-radius:8px;padding:12px 16px;margin:12px 0;font-size:.93rem}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+.col-prob{border-top:4px solid var(--prob)}
+.col-sol{border-top:4px solid var(--sol)}
+
+.para-block{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.para-block .pb-head{background:var(--navy);color:#fff;padding:9px 15px;font-weight:600;font-size:.92rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.para-block .pb-head .vi{color:#ffd98a;font-style:normal;font-weight:400;font-size:.82rem}
+.para-block .pb-body{padding:13px 16px;font-size:.94rem}
+.para-block .pb-body ul{margin:6px 0 0 20px}
+.para-block .pb-body li{margin-bottom:5px}
+
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7fafd}
+td .vi{display:block;font-size:.85rem}
+
+/* chain diagram (problem -> cause -> solution -> result) */
+.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:6px 0}
+.chain .link{flex:1;min-width:130px;background:var(--ice);border:1px solid var(--line);border-radius:10px;padding:11px 13px;position:relative;font-size:.9rem}
+.chain .link b{display:block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.chain .link.k-prob{background:var(--prob-bg);border-color:#e8c4c6}.chain .link.k-prob b{color:var(--prob)}
+.chain .link.k-cause{background:#fff4e0;border-color:#eddcb8}.chain .link.k-cause b{color:#8a6413}
+.chain .link.k-sol{background:var(--sol-bg);border-color:#c3e2d3}.chain .link.k-sol b{color:var(--sol)}
+.chain .link.k-res{background:#dcebfa;border-color:#bcd6ee}.chain .link.k-res b{color:#2a5c8a}
+.chain .arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1.3rem;padding:0 6px}
+@media(max-width:720px){.chain{flex-direction:column}.chain .arrow{transform:rotate(90deg);padding:4px 0}}
+
+/* language bank phrase cards */
+.phrase{border:1px solid var(--line);border-radius:10px;padding:13px 16px;margin-bottom:11px;background:#fbfdff}
+.phrase .ph-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+.phrase .ph-en{font-weight:700;color:var(--navy);font-size:1rem}
+.phrase .ph-mean{margin-top:2px;font-size:.9rem}
+.phrase .ph-ex{margin-top:8px;background:var(--ice);border-left:3px solid var(--gold);border-radius:6px;padding:8px 12px;font-size:.92rem}
+.phrase .ph-ex .ex-en{font-family:var(--serif)}
+.phrase .ph-ex .ex-vi{display:block;color:var(--muted);font-style:italic;font-size:.88em;margin-top:3px}
+.phrase.p-prob{border-left:4px solid var(--prob)}
+.phrase.p-sol{border-left:4px solid var(--sol)}
+.phrase.p-gold{border-left:4px solid var(--gold)}
+
+/* model essay annotation */
+.essay{font-family:var(--serif);font-size:1.03rem;line-height:1.9}
+.essay p{margin-bottom:16px}
+mark{border-radius:4px;padding:1px 4px;cursor:help}
+mark.hl-para{background:#dcebfa;border-bottom:2px solid #4a7fb5}
+mark.hl-prob{background:var(--prob-bg);border-bottom:2px solid var(--prob)}
+mark.hl-sol{background:var(--sol-bg);border-bottom:2px solid var(--sol)}
+mark.hl-link{background:var(--gold-soft);border-bottom:2px solid var(--gold)}
+mark.hl-op{background:#efe3f6;border-bottom:2px solid #8e5aad}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.legend span{font-size:.82rem;padding:4px 10px;border-radius:6px}
+.essay-note{background:var(--ice);border-radius:8px;padding:10px 14px;font-size:.88rem;margin:-6px 0 16px}
+
+/* quiz */
+.q-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-bottom:16px}
+.q-card .q-num{font-size:.75rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.q-card .q-text{font-weight:600;margin:6px 0 12px;color:var(--navy)}
+.opt{display:block;width:100%;text-align:left;background:var(--ice);border:2px solid transparent;border-radius:9px;padding:10px 14px;margin-bottom:8px;cursor:pointer;font-size:.93rem;font-family:var(--sans);transition:.15s}
+.opt:hover{border-color:var(--navy-soft)}
+.opt.correct{background:var(--sol-bg);border-color:var(--sol);font-weight:600}
+.opt.wrong{background:var(--prob-bg);border-color:var(--prob)}
+.opt:disabled{cursor:default;opacity:.92}
+.expl{display:none;margin-top:10px;background:var(--ice);border-left:4px solid var(--navy);border-radius:8px;padding:10px 14px;font-size:.88rem}
+.expl.show{display:block}
+.score-bar{position:sticky;top:48px;z-index:40;background:var(--navy);color:#fff;border-radius:10px;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;box-shadow:var(--shadow)}
+.score-bar .sc{font-size:1.1rem;font-weight:700;color:var(--gold)}
+.btn{background:var(--navy);color:#fff;border:none;border-radius:9px;padding:10px 20px;font-size:.9rem;font-weight:600;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--navy-soft)}
+.btn.gold{background:var(--gold);color:var(--navy-deep)}
+
+.chk{display:flex;align-items:flex-start;gap:10px;padding:9px 4px;border-bottom:1px dashed var(--line);cursor:pointer}
+.chk input{margin-top:4px;accent-color:var(--sol);width:17px;height:17px}
+.chk.done .chk-txt{text-decoration:line-through;color:var(--muted)}
+
+footer{text-align:center;padding:26px;color:var(--muted);font-size:.85rem}
+
+/* ===== Font settings panel ===== */
+#fontBtn{position:fixed;bottom:22px;right:22px;z-index:80;width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;border:2px solid var(--gold);font-size:1.15rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(14,35,56,.35);transition:.18s}
+#fontBtn:hover{background:var(--navy-soft);transform:scale(1.06)}
+#fontPanel{position:fixed;bottom:84px;right:22px;z-index:80;width:260px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 28px rgba(14,35,56,.28);padding:16px;display:none}
+#fontPanel.open{display:block}
+#fontPanel h4{color:var(--navy);font-size:.95rem;margin-bottom:10px}
+.fp-row{margin-bottom:13px}
+.fp-row .fp-label{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.fp-size{display:flex;align-items:center;gap:8px}
+.fp-size button{flex:1;background:var(--ice);border:1.5px solid var(--line);border-radius:8px;padding:7px 0;font-weight:700;cursor:pointer;font-family:var(--sans);transition:.15s}
+.fp-size button:hover{border-color:var(--navy)}
+.fp-size #fsVal{flex:1.2;text-align:center;font-weight:700;color:var(--navy)}
+#fontPanel select{width:100%;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;font-family:var(--sans);font-size:.9rem;background:#fff;color:var(--ink)}
+#fpReset{width:100%;background:var(--gold);color:var(--navy-deep);border:none;border-radius:8px;padding:8px 0;font-weight:700;cursor:pointer;font-family:var(--sans)}
+#fpReset:hover{filter:brightness(1.05)}
+body.f-times, body.f-times .opt, body.f-times .btn, body.f-times nav button, body.f-times select{font-family:'Times New Roman',serif}
+body.f-arial, body.f-arial .opt, body.f-arial .btn, body.f-arial nav button, body.f-arial select{font-family:Arial,Helvetica,sans-serif}
+body.f-verdana, body.f-verdana .opt, body.f-verdana .btn, body.f-verdana nav button, body.f-verdana select{font-family:Verdana,Geneva,sans-serif}
+body.f-tahoma, body.f-tahoma .opt, body.f-tahoma .btn, body.f-tahoma nav button, body.f-tahoma select{font-family:Tahoma,Geneva,sans-serif}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">N.D.N -0932067877</div>
+  <h1>IELTS Writing Task 2<br>Problem <span class="swap">&#8594;</span> Solution</h1>
+  <div class="sub">Dạng bài Vấn đề &amp; Giải pháp — Chiến lược viết Band 6.5 &#8594; 8.0</div>
+</header>
+
+<nav id="nav">
+  <button data-tab="t1" class="active">1️⃣ Nhận diện đề</button>
+  <button data-tab="t2">2️⃣ Cấu trúc bài</button>
+  <button data-tab="t3">3️⃣ Ngôn ngữ</button>
+  <button data-tab="t4">4️⃣ Bài mẫu</button>
+  <button data-tab="t5">5️⃣ Lỗi thường gặp</button>
+  <button data-tab="t6">🎯 Practice Hub</button>
+</nav>
+
+<main>
+<!-- ============ TAB 1: QUESTION TYPES ============ -->
+<section class="tab active" id="t1">
+  <h2 class="sec-title">Bước 1 — Nhận diện đúng biến thể đề</h2>
+  <p class="sec-sub">Dạng "Vấn đề &amp; Giải pháp" có <strong>3 biến thể</strong>. Đọc kỹ động từ trong đề (<em>causes / problems / effects / solutions / measures</em>) để biết chính xác đề hỏi mấy phần — trả lời thiếu phần nào là mất điểm Task Response.</p>
+
+  <div class="card">
+    <span class="tag type-a">Type A — Problem &amp; Solution (phổ biến nhất)</span>
+    <h3>"What problems does this cause and what solutions can you suggest?"</h3>
+    <div class="qbox">Traffic congestion is becoming a serious issue in many large cities. <strong>What problems does this cause, and what measures could be taken to solve them?</strong></div>
+    <p><strong>Nhiệm vụ:</strong> Nêu <u>vấn đề / hậu quả</u> ở đoạn thân 1, rồi đưa <u>giải pháp</u> tương ứng ở đoạn thân 2. Đây là dạng cân bằng: một đoạn hỏi, một đoạn đáp.</p>
+    <p class="vi">Bí quyết: giải pháp phải "khớp" với vấn đề đã nêu. Nêu vấn đề A mà giải pháp lại chữa vấn đề B → mất tính mạch lạc (Coherence).</p>
+  </div>
+
+  <div class="card">
+    <span class="tag type-b">Type B — Cause &amp; Solution</span>
+    <h3>"What are the causes and what solutions can you suggest?"</h3>
+    <div class="qbox">In many countries, the number of people suffering from obesity is rising rapidly. <strong>What are the causes of this problem, and what solutions can you suggest?</strong></div>
+    <p><strong>Nhiệm vụ:</strong> Đoạn thân 1 giải thích <u>nguyên nhân</u> (tại sao vấn đề xảy ra), đoạn thân 2 đề xuất <u>giải pháp</u>. Khác Type A ở chỗ: hỏi <strong>nguyên nhân</strong> chứ không phải <strong>hậu quả</strong>.</p>
+    <div class="warn">⚠️ <strong>Lỗi thường gặp:</strong> Nhầm <em>cause</em> (nguyên nhân — vì sao xảy ra) với <em>effect/problem</em> (hậu quả — gây ra điều gì). Viết nhầm hướng = lạc đề, Task Response tụt mạnh.</div>
+    <p class="vi">Mẹo phân biệt: <em>Cause</em> đứng TRƯỚC vấn đề (→ gây ra vấn đề). <em>Effect/Problem</em> đứng SAU vấn đề (vấn đề → gây ra hậu quả).</p>
+  </div>
+
+  <div class="card">
+    <span class="tag type-c">Type C — Cause &amp; Effect (+ Solution)</span>
+    <h3>"What are the causes and effects? / What are the reasons and how can it be solved?"</h3>
+    <div class="qbox">Many young people are leaving the countryside to live in cities. <strong>What are the reasons for this, and what effects does it have on rural areas?</strong></div>
+    <p><strong>Nhiệm vụ:</strong> Đọc THẬT kỹ — biến thể này có thể hỏi <u>nguyên nhân + hậu quả</u> (không có giải pháp), hoặc <u>nguyên nhân + giải pháp</u>. Xác định đúng 2 phần được hỏi rồi mỗi phần một đoạn thân bài.</p>
+    <p class="vi">Đừng "auto" viết giải pháp theo thói quen. Nếu đề chỉ hỏi nguyên nhân + hậu quả mà bạn viết giải pháp → phần đó thừa, không được tính điểm, lại tốn thời gian.</p>
+  </div>
+
+  <div class="card">
+    <h3>📊 Bảng so sánh nhanh</h3>
+    <table>
+      <tr><th>&nbsp;</th><th>Type A<br>Problem + Solution</th><th>Type B<br>Cause + Solution</th><th>Type C<br>Cause + Effect (±Solution)</th></tr>
+      <tr><td><strong>Đoạn thân 1 hỏi gì?</strong></td><td>Vấn đề / hậu quả</td><td>Nguyên nhân</td><td>Nguyên nhân (lý do)</td></tr>
+      <tr><td><strong>Đoạn thân 2 hỏi gì?</strong></td><td>Giải pháp</td><td>Giải pháp</td><td>Hậu quả (hoặc giải pháp)</td></tr>
+      <tr><td><strong>Từ khoá nhận diện</strong></td><td>problems, effects, measures, solutions</td><td>causes, reasons, solutions</td><td>reasons, causes, effects, results</td></tr>
+      <tr><td><strong>Cần nêu ý kiến?</strong></td><td>❌ Thường không</td><td>❌ Không</td><td>❌ Không</td></tr>
+    </table>
+    <p class="vi" style="margin-top:10px">Lưu ý: dạng Problem &amp; Solution thường KHÔNG hỏi ý kiến cá nhân (khác Advantages &amp; Disadvantages Type B/C). Nhiệm vụ là phân tích khách quan, không "chọn phe".</p>
+  </div>
+
+  <div class="note">💡 <strong>Quy tắc vàng:</strong> Trước khi viết, gạch chân 2 danh từ chỉ nhiệm vụ trong đề (ví dụ: <em>causes</em> … <em>solutions</em>). Hai danh từ đó chính là chủ đề của 2 đoạn thân bài. Viết đúng 2 phần được hỏi — không thừa, không thiếu.</div>
+</section>
+
+<!-- ============ TAB 2: STRUCTURE ============ -->
+<section class="tab" id="t2">
+  <h2 class="sec-title">Bước 2 — Cấu trúc 4 đoạn chuẩn</h2>
+  <p class="sec-sub">Một khung 4 đoạn (250–290 từ) dùng cho cả 3 biến thể — chỉ đổi "nhãn" của 2 đoạn thân bài theo đúng 2 phần đề hỏi.</p>
+
+  <div class="card">
+    <span class="tag type-a">Khung cho Type A — Problem &amp; Solution</span>
+    <div class="para-block">
+      <div class="pb-head"><span>Đoạn 1 — Introduction (2 câu, ~40 từ)</span><span class="vi">Mở bài</span></div>
+      <div class="pb-body">
+        <ul>
+          <li><strong>Câu 1 — Paraphrase đề:</strong> viết lại tình huống/vấn đề bằng từ vựng của bạn.</li>
+          <li><strong>Câu 2 — Thesis (báo hướng bài):</strong> <em>"This essay will examine the main problems caused by this trend and propose some viable solutions."</em></li>
+        </ul>
+      </div>
+    </div>
+    <div class="para-block">
+      <div class="pb-head"><span>Đoạn 2 — Problems / Causes (~95 từ)</span><span class="vi">Vấn đề / Nguyên nhân</span></div>
+      <div class="pb-body">
+        <ul>
+          <li><strong>Topic sentence:</strong> nêu 1–2 vấn đề chính. <em>"The most pressing problem is…"</em></li>
+          <li>Phát triển theo chuỗi: <strong>Vấn đề → giải thích → hệ quả cụ thể</strong>.</li>
+          <li>💡 Nên đi SÂU 1–2 vấn đề (có ví dụ) thay vì liệt kê 4–5 vấn đề hời hợt.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="para-block">
+      <div class="pb-head"><span>Đoạn 3 — Solutions (~95 từ)</span><span class="vi">Giải pháp</span></div>
+      <div class="pb-body">
+        <ul>
+          <li><strong>Topic sentence:</strong> <em>"Fortunately, several measures can be taken to address these issues."</em></li>
+          <li>Mỗi giải pháp theo chuỗi: <strong>Giải pháp → cách vận hành → kết quả mong đợi</strong>.</li>
+          <li>💡 QUAN TRỌNG: giải pháp phải <u>khớp</u> với vấn đề ở đoạn 2. Vấn đề gì → giải pháp chữa đúng vấn đề đó.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="para-block">
+      <div class="pb-head"><span>Đoạn 4 — Conclusion (1–2 câu, ~35 từ)</span><span class="vi">Kết bài</span></div>
+      <div class="pb-body">
+        <ul>
+          <li>Tóm tắt lại vấn đề chính + giải pháp chính. <em>"In conclusion, although … poses serious challenges, these can be mitigated through … and …"</em></li>
+          <li>❌ Không thêm vấn đề/giải pháp mới ở kết bài.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔗 Kỹ thuật "chuỗi nhân quả" — trái tim của dạng Problem &amp; Solution</h3>
+    <p>Điểm khác biệt lớn nhất với Advantages &amp; Disadvantages: dạng này đòi hỏi <strong>lập luận theo chuỗi logic</strong>, không chỉ liệt kê. Mỗi ý phải nối được nguyên nhân với hậu quả, hoặc giải pháp với kết quả:</p>
+    <div class="chain">
+      <div class="link k-prob"><b>Vấn đề</b>Tắc nghẽn giao thông<span class="vi" style="font-size:.8rem">traffic congestion</span></div>
+      <div class="arrow">➜</div>
+      <div class="link k-cause"><b>Vì sao</b>Quá nhiều xe cá nhân, hạ tầng yếu<span class="vi" style="font-size:.8rem">too many private cars</span></div>
+      <div class="arrow">➜</div>
+      <div class="link k-sol"><b>Giải pháp</b>Đầu tư giao thông công cộng<span class="vi" style="font-size:.8rem">invest in public transport</span></div>
+      <div class="arrow">➜</div>
+      <div class="link k-res"><b>Kết quả</b>Giảm xe cá nhân, đường thông thoáng<span class="vi" style="font-size:.8rem">fewer cars on the road</span></div>
+    </div>
+    <p class="vi" style="margin-top:10px">Nhìn chuỗi này: giải pháp (giao thông công cộng) chữa đúng nguyên nhân (quá nhiều xe cá nhân) → tạo kết quả rõ ràng. Đó là cách viết đoạn ăn điểm Coherence &amp; Cohesion.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag type-b">Điều chỉnh cho Type B (Cause + Solution) &amp; Type C</span>
+    <p><strong>Type B:</strong> Đoạn 2 đổi nhãn thành <em>Nguyên nhân</em> (giải thích VÌ SAO vấn đề xảy ra), đoạn 3 giữ nguyên <em>Giải pháp</em> — và giải pháp nên "gỡ" đúng nguyên nhân.</p>
+    <p style="margin-top:8px"><strong>Type C (Cause + Effect):</strong> Đoạn 2 = <em>Nguyên nhân</em>, đoạn 3 = <em>Hậu quả</em>. KHÔNG viết giải pháp nếu đề không hỏi. Thesis báo đúng 2 phần: <em>"This essay will explore the reasons behind this phenomenon and its effects on…"</em></p>
+  </div>
+
+  <div class="note">⏱️ <strong>Phân bổ 40 phút:</strong> 5' phân tích đề (xác định đúng 2 phần được hỏi) → 30' viết (Mở 4' • Thân 1: 11' • Thân 2: 11' • Kết 3') → 5' kiểm tra lỗi.</div>
+
+  <div class="card">
+    <h3>🧠 Kho ý tưởng nhanh cho vấn đề &amp; giải pháp</h3>
+    <table>
+      <tr><th>Nguồn giải pháp</th><th>Ai hành động — làm gì</th></tr>
+      <tr><td><strong>Chính phủ</strong> (Government)</td><td>Ra luật, đánh thuế, trợ cấp, đầu tư hạ tầng, tuyên truyền.<span class="vi">pass laws, impose taxes, subsidise, invest, raise awareness</span></td></tr>
+      <tr><td><strong>Trường học</strong> (Schools)</td><td>Giáo dục, đưa vào chương trình học, tổ chức hoạt động.<span class="vi">educate, add to the curriculum</span></td></tr>
+      <tr><td><strong>Doanh nghiệp</strong> (Businesses)</td><td>Đổi chính sách, áp dụng công nghệ xanh, hỗ trợ nhân viên.<span class="vi">adopt greener technology, support staff</span></td></tr>
+      <tr><td><strong>Cá nhân</strong> (Individuals)</td><td>Thay đổi thói quen, nâng cao ý thức.<span class="vi">change habits, raise personal awareness</span></td></tr>
+    </table>
+    <p class="vi" style="margin-top:10px">Mẹo: khi bí giải pháp, tự hỏi "Ai có thể giải quyết việc này?" — chính phủ, nhà trường, doanh nghiệp hay cá nhân — rồi triển khai theo tác nhân đó.</p>
+  </div>
+</section>
+<!-- ============ TAB 3: LANGUAGE BANK (IPA + full examples) ============ -->
+<section class="tab" id="t3">
+  <h2 class="sec-title">Bước 3 — Ngân hàng ngôn ngữ Band 7+</h2>
+  <p class="sec-sub">Mỗi cụm gồm: <span class="ipa">/phiên âm IPA/</span> + nghĩa tiếng Việt + <strong>một câu ví dụ đầy đủ song ngữ Anh – Việt</strong>. Dạng Problem &amp; Solution cần từ vựng chỉ nguyên nhân, hậu quả và biện pháp — không chỉ danh từ mà cả động từ nối chuỗi lập luận.</p>
+
+  <div class="card col-prob">
+    <h3>🔴 Nhóm 1 — Nêu VẤN ĐỀ &amp; HẬU QUẢ</h3>
+
+    <div class="phrase p-prob">
+      <div class="ph-line"><span class="ph-en">issue / challenge / drawback / downside</span><span class="ipa">/ˈɪʃuː/ /ˈtʃælɪndʒ/ /ˈdrɔːbæk/ /ˈdaʊnsaɪd/</span></div>
+      <div class="ph-mean">Các danh từ thay thế "problem": vấn đề, thách thức, mặt hạn chế.</div>
+      <div class="ph-ex"><span class="ex-en">Air pollution has become one of the most pressing <strong>issues</strong> facing modern cities.</span><span class="ex-vi">Ô nhiễm không khí đã trở thành một trong những vấn đề cấp bách nhất mà các thành phố hiện đại phải đối mặt.</span></div>
+    </div>
+
+    <div class="phrase p-prob">
+      <div class="ph-line"><span class="ph-en">The most pressing problem is + danh từ/mệnh đề</span><span class="ipa">/ðə məʊst ˈpresɪŋ ˈprɒbləm/</span></div>
+      <div class="ph-mean">Vấn đề cấp bách nhất là… — công thức topic sentence mở đoạn vấn đề.</div>
+      <div class="ph-ex"><span class="ex-en"><strong>The most pressing problem is</strong> the sheer volume of traffic during rush hour.</span><span class="ex-vi">Vấn đề cấp bách nhất là lượng xe cộ khổng lồ trong giờ cao điểm.</span></div>
+    </div>
+
+    <div class="phrase p-prob">
+      <div class="ph-line"><span class="ph-en">X gives rise to / leads to / results in + danh từ</span><span class="ipa">/ˌɡɪv ˈraɪz tə/ /ˈliːd tə/ /rɪˈzʌlt ɪn/</span></div>
+      <div class="ph-mean">X dẫn đến / gây ra… — động từ nối vấn đề với hậu quả (chuỗi nhân quả).</div>
+      <div class="ph-ex"><span class="ex-en">Rapid urbanisation <strong>gives rise to</strong> overcrowding and a shortage of affordable housing.</span><span class="ex-vi">Đô thị hoá nhanh dẫn đến tình trạng quá tải dân số và thiếu nhà ở giá rẻ.</span></div>
+    </div>
+
+    <div class="phrase p-prob">
+      <div class="ph-line"><span class="ph-en">stem from / be rooted in / be attributed to + danh từ</span><span class="ipa">/ˈstem frəm/ /ˈruːtɪd ɪn/ /əˈtrɪbjuːtɪd tə/</span></div>
+      <div class="ph-mean">Bắt nguồn từ / do… mà ra — động từ chỉ NGUYÊN NHÂN (dùng cho Type B/C).</div>
+      <div class="ph-ex"><span class="ex-en">Rising obesity rates largely <strong>stem from</strong> sedentary lifestyles and poor diets.</span><span class="ex-vi">Tỷ lệ béo phì gia tăng chủ yếu bắt nguồn từ lối sống ít vận động và chế độ ăn uống kém.</span></div>
+    </div>
+
+    <div class="phrase p-prob">
+      <div class="ph-line"><span class="ph-en">have a detrimental / damaging effect on + danh từ</span><span class="ipa">/ˌdetrɪˈmentl ɪˈfekt/ /ˈdæmɪdʒɪŋ/</span></div>
+      <div class="ph-mean">Gây tác động tiêu cực đến… — diễn tả hậu quả một cách học thuật.</div>
+      <div class="ph-ex"><span class="ex-en">Long working hours can <strong>have a detrimental effect on</strong> employees' mental health.</span><span class="ex-vi">Giờ làm việc kéo dài có thể gây tác động tiêu cực đến sức khoẻ tinh thần của người lao động.</span></div>
+    </div>
+
+    <div class="phrase p-prob">
+      <div class="ph-line"><span class="ph-en">exacerbate / aggravate + danh từ</span><span class="ipa">/ɪɡˈzæsəbeɪt/ /ˈæɡrəveɪt/</span></div>
+      <div class="ph-mean">Làm trầm trọng thêm — từ vựng Band 8, dùng khi một yếu tố khiến vấn đề tệ hơn.</div>
+      <div class="ph-ex"><span class="ex-en">The lack of green spaces further <strong>exacerbates</strong> the problem of urban air pollution.</span><span class="ex-vi">Việc thiếu không gian xanh càng làm trầm trọng thêm vấn đề ô nhiễm không khí đô thị.</span></div>
+    </div>
+  </div>
+
+  <div class="card col-sol">
+    <h3>🟢 Nhóm 2 — Đề xuất GIẢI PHÁP</h3>
+
+    <div class="phrase p-sol">
+      <div class="ph-line"><span class="ph-en">solution / measure / step / approach</span><span class="ipa">/səˈluːʃn/ /ˈmeʒə/ /step/ /əˈprəʊtʃ/</span></div>
+      <div class="ph-mean">Các danh từ thay thế "solution": giải pháp, biện pháp, bước đi, hướng tiếp cận.</div>
+      <div class="ph-ex"><span class="ex-en">One effective <strong>measure</strong> would be to expand the public transport network.</span><span class="ex-vi">Một biện pháp hiệu quả là mở rộng mạng lưới giao thông công cộng.</span></div>
+    </div>
+
+    <div class="phrase p-sol">
+      <div class="ph-line"><span class="ph-en">A viable solution would be to + động từ</span><span class="ipa">/ə ˈvaɪəbl səˈluːʃn/</span></div>
+      <div class="ph-mean">Một giải pháp khả thi là… — công thức topic sentence mở đoạn giải pháp.</div>
+      <div class="ph-ex"><span class="ex-en"><strong>A viable solution would be to</strong> impose higher taxes on private vehicles in city centres.</span><span class="ex-vi">Một giải pháp khả thi là áp thuế cao hơn đối với xe cá nhân trong khu vực trung tâm thành phố.</span></div>
+    </div>
+
+    <div class="phrase p-sol">
+      <div class="ph-line"><span class="ph-en">tackle / address / combat / mitigate + danh từ</span><span class="ipa">/ˈtækl/ /əˈdres/ /ˈkɒmbæt/ /ˈmɪtɪɡeɪt/</span></div>
+      <div class="ph-mean">Giải quyết / đối phó / giảm nhẹ (vấn đề) — động từ mạnh thay "solve".</div>
+      <div class="ph-ex"><span class="ex-en">Governments must take urgent action to <strong>tackle</strong> the root causes of youth unemployment.</span><span class="ex-vi">Chính phủ phải hành động khẩn cấp để giải quyết những nguyên nhân gốc rễ của nạn thất nghiệp ở giới trẻ.</span></div>
+    </div>
+
+    <div class="phrase p-sol">
+      <div class="ph-line"><span class="ph-en">implement / introduce / enforce + danh từ (chính sách)</span><span class="ipa">/ˈɪmplɪment/ /ˌɪntrəˈdjuːs/ /ɪnˈfɔːs/</span></div>
+      <div class="ph-mean">Triển khai / ban hành / thực thi (chính sách, luật) — hành động của chính phủ.</div>
+      <div class="ph-ex"><span class="ex-en">The government could <strong>implement</strong> stricter regulations on industrial emissions.</span><span class="ex-vi">Chính phủ có thể triển khai các quy định nghiêm ngặt hơn về khí thải công nghiệp.</span></div>
+    </div>
+
+    <div class="phrase p-sol">
+      <div class="ph-line"><span class="ph-en">raise awareness of + danh từ</span><span class="ipa">/ˌreɪz əˈweənəs əv/</span></div>
+      <div class="ph-mean">Nâng cao nhận thức về… — giải pháp mềm, dùng cho hầu hết mọi chủ đề.</div>
+      <div class="ph-ex"><span class="ex-en">Media campaigns can help <strong>raise awareness of</strong> the dangers of an unhealthy diet.</span><span class="ex-vi">Các chiến dịch truyền thông có thể giúp nâng cao nhận thức về tác hại của chế độ ăn uống không lành mạnh.</span></div>
+    </div>
+
+    <div class="phrase p-sol">
+      <div class="ph-line"><span class="ph-en">go a long way towards + V-ing / danh từ</span><span class="ipa">/ˌɡəʊ ə ˌlɒŋ ˈweɪ təˈwɔːdz/</span></div>
+      <div class="ph-mean">Góp phần đáng kể vào việc… — diễn tả hiệu quả của giải pháp (chuỗi kết quả).</div>
+      <div class="ph-ex"><span class="ex-en">Investing in renewable energy would <strong>go a long way towards</strong> reducing carbon emissions.</span><span class="ex-vi">Đầu tư vào năng lượng tái tạo sẽ góp phần đáng kể vào việc giảm lượng khí thải carbon.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔗 Nhóm 3 — Từ nối chuỗi nhân quả (Cause – Effect linkers)</h3>
+
+    <div class="phrase p-gold">
+      <div class="ph-line"><span class="ph-en">As a result / Consequently / As a consequence</span><span class="ipa">/əz ə rɪˈzʌlt/ /ˈkɒnsɪkwəntli/</span></div>
+      <div class="ph-mean">Kết quả là / Do đó… — nối hậu quả vào đầu câu.</div>
+      <div class="ph-ex"><span class="ex-en">Many factories dump waste into rivers. <strong>As a result</strong>, water sources become heavily polluted.</span><span class="ex-vi">Nhiều nhà máy xả thải xuống sông. Kết quả là các nguồn nước bị ô nhiễm nặng.</span></div>
+    </div>
+
+    <div class="phrase p-gold">
+      <div class="ph-line"><span class="ph-en">This is largely because / due to / owing to + danh từ</span><span class="ipa">/dju(ː) tə/ /ˈəʊɪŋ tə/</span></div>
+      <div class="ph-mean">Điều này phần lớn là do… — nối vào nguyên nhân.</div>
+      <div class="ph-ex"><span class="ex-en">Young people are moving to cities, <strong>largely due to</strong> the lack of job opportunities in rural areas.</span><span class="ex-vi">Giới trẻ đang chuyển đến thành phố, phần lớn là do thiếu cơ hội việc làm ở nông thôn.</span></div>
+    </div>
+
+    <div class="phrase p-gold">
+      <div class="ph-line"><span class="ph-en">If … were … , … would … (câu điều kiện loại 2)</span><span class="ipa">/wɜː/ /wʊd/</span></div>
+      <div class="ph-mean">Nếu… thì sẽ… — cấu trúc "vàng" để diễn tả kết quả của giải pháp, ghi điểm Grammar.</div>
+      <div class="ph-ex"><span class="ex-en"><strong>If</strong> public transport <strong>were</strong> more reliable, fewer people <strong>would</strong> rely on private cars.</span><span class="ex-vi">Nếu giao thông công cộng đáng tin cậy hơn, sẽ ít người phụ thuộc vào xe cá nhân hơn.</span></div>
+    </div>
+
+    <div class="phrase p-gold">
+      <div class="ph-line"><span class="ph-en">By + V-ing, … can/could + động từ</span><span class="ipa">/baɪ/</span></div>
+      <div class="ph-mean">Bằng cách làm gì, … có thể… — nối giải pháp (cách làm) với kết quả.</div>
+      <div class="ph-ex"><span class="ex-en"><strong>By</strong> investing in cycling lanes, cities <strong>could</strong> encourage greener commuting habits.</span><span class="ex-vi">Bằng cách đầu tư vào làn đường xe đạp, các thành phố có thể khuyến khích thói quen đi lại xanh hơn.</span></div>
+    </div>
+
+    <div class="phrase p-gold">
+      <div class="ph-line"><span class="ph-en">thereby / thus + V-ing</span><span class="ipa">/ˌðeəˈbaɪ/ /ðʌs/</span></div>
+      <div class="ph-mean">Qua đó / nhờ vậy… — nối kết quả cuối chuỗi một cách trang trọng.</div>
+      <div class="ph-ex"><span class="ex-en">Recycling reduces landfill waste, <strong>thereby</strong> protecting the surrounding environment.</span><span class="ex-vi">Việc tái chế làm giảm rác thải chôn lấp, qua đó bảo vệ môi trường xung quanh.</span></div>
+    </div>
+  </div>
+</section>
+<!-- ============ TAB 4: MODEL ESSAY ============ -->
+<section class="tab" id="t4">
+  <h2 class="sec-title">Bước 4 — Bài mẫu Band 7.5+ có chú thích</h2>
+  <p class="sec-sub">Type A (Problem &amp; Solution). Di chuột (hoặc chạm) vào phần tô màu để xem chức năng của từng câu.</p>
+
+  <div class="card">
+    <div class="qbox">Traffic congestion is becoming a serious issue in many large cities. <strong>What problems does this cause, and what measures could be taken to solve them?</strong></div>
+
+    <div class="legend">
+      <span style="background:#dcebfa">🔵 Paraphrase / Thesis</span>
+      <span style="background:var(--prob-bg)">🔴 Vấn đề / Hậu quả</span>
+      <span style="background:var(--sol-bg)">🟢 Giải pháp</span>
+      <span style="background:var(--gold-soft)">🟡 Từ nối nhân quả</span>
+      <span style="background:#efe3f6">🟣 Kết quả / đánh giá</span>
+    </div>
+
+    <div class="essay">
+      <p><mark class="hl-para" title="Paraphrase đề: traffic congestion → the growing volume of vehicles; large cities → densely populated urban areas">The growing volume of vehicles on the roads has turned traffic congestion into a daily ordeal for residents of densely populated urban areas.</mark> <mark class="hl-op" title="Thesis báo hướng bài: nêu rõ 2 phần sẽ viết — vấn đề + giải pháp">This essay will outline the main problems that congestion creates and suggest several practical measures to address them.</mark></p>
+
+      <p><mark class="hl-prob" title="Topic sentence đoạn vấn đề: nêu vấn đề chính">The most immediate problem caused by congestion is the enormous amount of time that commuters waste every day.</mark> <mark class="hl-link" title="As a result = từ nối nhân quả, dẫn vào hậu quả">As a result,</mark> <mark class="hl-prob" title="Hậu quả 1: nối vấn đề với hệ quả cụ thể">people arrive at work exhausted and less productive, while businesses suffer from delayed deliveries and lost working hours.</mark> <mark class="hl-prob" title="Vấn đề 2: mở rộng sang môi trường — góc nhìn thứ hai">A further consequence is environmental: vehicles trapped in slow-moving traffic burn fuel inefficiently,</mark> <mark class="hl-link" title="thereby = nối kết quả cuối chuỗi">thereby</mark> <mark class="hl-prob" title="Hậu quả nối tiếp: khí thải, ô nhiễm">releasing large quantities of harmful emissions that worsen air quality and public health.</mark></p>
+
+      <p><mark class="hl-sol" title="Topic sentence đoạn giải pháp: báo hiệu chuyển sang phần giải pháp">Fortunately, these problems can be alleviated through a combination of measures.</mark> <mark class="hl-sol" title="Giải pháp 1: đầu tư giao thông công cộng — khớp đúng vấn đề quá nhiều xe">The most effective solution would be for governments to invest heavily in efficient public transport, such as metro systems and dedicated bus lanes.</mark> <mark class="hl-op" title="Câu điều kiện loại 2 diễn tả kết quả — ghi điểm Grammar">If such services were fast and affordable, many commuters would abandon their private cars,</mark> <mark class="hl-op" title="Kết quả: giảm xe trên đường">easing the pressure on the road network.</mark> <mark class="hl-link" title="In addition = từ nối bổ sung giải pháp 2">In addition,</mark> <mark class="hl-sol" title="Giải pháp 2: thu phí ùn tắc — biện pháp của chính phủ">imposing congestion charges on vehicles entering city centres would discourage unnecessary journeys</mark> <mark class="hl-op" title="Hệ quả kép: vừa giảm xe vừa tạo ngân sách — mở rộng lập luận">while generating revenue that could be reinvested in green infrastructure.</mark></p>
+
+      <p><mark class="hl-link" title="In conclusion = tín hiệu kết bài">In conclusion,</mark> <mark class="hl-op" title="Tóm tắt lại: vấn đề chính (thời gian + môi trường) + giải pháp chính (giao thông công cộng + phí ùn tắc)">although traffic congestion causes considerable economic and environmental harm, its impact can be significantly reduced through greater investment in public transport and well-designed pricing policies.</mark></p>
+    </div>
+
+    <div class="essay-note">📏 <strong>245 từ</strong> • Đoạn vấn đề: 2 vấn đề (thời gian + môi trường), đều phát triển theo chuỗi nhân quả • Đoạn giải pháp: 2 giải pháp khớp đúng vấn đề • Không có ý kiến cá nhân — đúng đặc thù dạng Problem &amp; Solution.</div>
+
+    <h3 style="color:var(--navy);margin-top:18px">🔍 Vì sao bài này đạt Band 7.5+?</h3>
+    <table>
+      <tr><th>Tiêu chí</th><th>Bằng chứng trong bài</th></tr>
+      <tr><td><strong>Task Response</strong></td><td>Trả lời đủ 2 phần đề hỏi: problems (thời gian + môi trường) và measures (giao thông công cộng + phí ùn tắc); giải pháp khớp đúng vấn đề.</td></tr>
+      <tr><td><strong>Coherence &amp; Cohesion</strong></td><td>Chuỗi nhân quả rõ: As a result → thereby → If…were…would → In addition. Mỗi đoạn một chức năng, mạch lạc.</td></tr>
+      <tr><td><strong>Lexical Resource</strong></td><td>a daily ordeal, alleviated, congestion charges, green infrastructure, burn fuel inefficiently — từ vựng chủ đề đa dạng.</td></tr>
+      <tr><td><strong>Grammar</strong></td><td>Câu điều kiện loại 2 (If…were…would), mệnh đề phân từ (easing…, generating…), mệnh đề quan hệ — đa dạng và chính xác.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ TAB 5: COMMON MISTAKES ============ -->
+<section class="tab" id="t5">
+  <h2 class="sec-title">Bước 5 — 6 lỗi khiến học sinh mất Band</h2>
+  <p class="sec-sub">Tổng hợp từ hàng nghìn bài chấm thực tế — kèm cách sửa ngay.</p>
+
+  <div class="card">
+    <h3>1️⃣ Giải pháp không "khớp" với vấn đề</h3>
+    <div class="warn">❌ Đoạn 2 nói về ô nhiễm không khí, nhưng đoạn 3 lại đề xuất "xây thêm trường học" — chẳng liên quan gì.</div>
+    <div class="good">✅ Mỗi giải pháp phải gỡ đúng một vấn đề đã nêu. Vấn đề ô nhiễm → giải pháp về khí thải/năng lượng sạch. Đây là điểm mấu chốt của Coherence.</div>
+  </div>
+
+  <div class="card">
+    <h3>2️⃣ Nhầm nguyên nhân (cause) với hậu quả (effect)</h3>
+    <div class="warn">❌ Đề hỏi <em>causes</em> (nguyên nhân) nhưng học sinh viết về <em>effects</em> (hậu quả) → lạc đề hoàn toàn.</div>
+    <div class="good">✅ Nhớ: <em>Cause</em> đứng TRƯỚC vấn đề (→ gây ra vấn đề); <em>Effect</em> đứng SAU vấn đề (vấn đề → gây ra). Gạch chân từ khoá trước khi viết.</div>
+  </div>
+
+  <div class="card">
+    <h3>3️⃣ Chỉ liệt kê, không có chuỗi nhân quả</h3>
+    <div class="warn">❌ <em>"Congestion causes pollution, stress, noise, accidents and delays."</em> — 5 hậu quả trần trụi, không giải thích.</div>
+    <div class="good">✅ Đi sâu 1–2 ý: nêu hậu quả → giải thích cơ chế → hệ quả cuối. Dùng "As a result… thereby…". 2 ý phát triển sâu &gt; 5 ý liệt kê.</div>
+  </div>
+
+  <div class="card">
+    <h3>4️⃣ Giải pháp chung chung, không nói ai làm và làm thế nào</h3>
+    <div class="warn">❌ <em>"The government should solve this problem."</em> — quá mơ hồ, không ghi điểm ý tưởng.</div>
+    <div class="good">✅ Nêu rõ TÁC NHÂN + HÀNH ĐỘNG + KẾT QUẢ: <em>"The government could impose congestion charges, which would discourage unnecessary journeys."</em></div>
+  </div>
+
+  <div class="card">
+    <h3>5️⃣ Viết thêm phần đề không hỏi</h3>
+    <div class="warn">❌ Đề chỉ hỏi <em>causes + effects</em> nhưng học sinh "auto" viết thêm cả giải pháp → thừa, tốn thời gian, không được tính điểm.</div>
+    <div class="good">✅ Chỉ viết đúng 2 phần được hỏi. Đọc kỹ đề, xác định chính xác nhiệm vụ trước khi cầm bút.</div>
+  </div>
+
+  <div class="card">
+    <h3>6️⃣ Đưa quá nhiều giải pháp, mỗi cái một câu</h3>
+    <div class="warn">❌ Liệt kê 4–5 giải pháp trong một đoạn, không cái nào được giải thích → giống danh sách hơn là bài luận.</div>
+    <div class="good">✅ Chọn 1–2 giải pháp mạnh nhất, phát triển sâu (cách vận hành + kết quả mong đợi). Chất lượng hơn số lượng.</div>
+  </div>
+
+  <div class="card">
+    <h3>✅ Checklist tự kiểm tra trước khi nộp bài <span class="vi">(tick để lưu tiến độ)</span></h3>
+    <div id="checklist">
+      <label class="chk"><input type="checkbox" data-k="c1"><span class="chk-txt">Tôi đã xác định đúng 2 phần đề hỏi (vd: nguyên nhân + giải pháp) trước khi viết?</span></label>
+      <label class="chk"><input type="checkbox" data-k="c2"><span class="chk-txt">Tôi không nhầm nguyên nhân (cause) với hậu quả (effect)?</span></label>
+      <label class="chk"><input type="checkbox" data-k="c3"><span class="chk-txt">Mỗi giải pháp có khớp đúng với một vấn đề/nguyên nhân đã nêu?</span></label>
+      <label class="chk"><input type="checkbox" data-k="c4"><span class="chk-txt">Tôi đã dùng chuỗi nhân quả (As a result / thereby / If…would) thay vì chỉ liệt kê?</span></label>
+      <label class="chk"><input type="checkbox" data-k="c5"><span class="chk-txt">Mỗi giải pháp nêu rõ AI làm — LÀM GÌ — KẾT QUẢ ra sao?</span></label>
+      <label class="chk"><input type="checkbox" data-k="c6"><span class="chk-txt">Tôi chỉ viết đúng phần đề hỏi, không thêm phần thừa?</span></label>
+      <label class="chk"><input type="checkbox" data-k="c7"><span class="chk-txt">Có ít nhất 3 cụm thay thế cho problem/solution?</span></label>
+      <label class="chk"><input type="checkbox" data-k="c8"><span class="chk-txt">Bài đủ 250+ từ, kết bài tóm tắt đúng vấn đề + giải pháp chính, không ý mới?</span></label>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TAB 6: PRACTICE HUB ============ -->
+<section class="tab" id="t6">
+  <h2 class="sec-title">🎯 Practice Hub — 12 câu luyện tập</h2>
+  <p class="sec-sub">Chọn đáp án → nhận giải thích ngay. Điểm được lưu tự động trên máy.</p>
+
+  <div class="score-bar">
+    <span>Điểm của bạn</span>
+    <span class="sc"><span id="score">0</span> / 12</span>
+    <button class="btn gold" id="resetQuiz">🔄 Làm lại</button>
+  </div>
+
+  <div id="quiz"></div>
+</section>
+</main>
+
+<button id="fontBtn" title="Điều chỉnh font chữ" aria-label="Điều chỉnh font chữ">Aa</button>
+<div id="fontPanel" role="dialog" aria-label="Điều chỉnh font chữ">
+  <h4>🔤 Điều chỉnh font chữ</h4>
+  <div class="fp-row">
+    <div class="fp-label">Cỡ chữ</div>
+    <div class="fp-size">
+      <button id="fsDown" aria-label="Giảm cỡ chữ">A−</button>
+      <span id="fsVal">100%</span>
+      <button id="fsUp" aria-label="Tăng cỡ chữ">A+</button>
+    </div>
+  </div>
+  <div class="fp-row">
+    <div class="fp-label">Kiểu chữ</div>
+    <select id="fontFamily">
+      <option value="default">Mặc định (hệ thống)</option>
+      <option value="times">Times New Roman</option>
+      <option value="arial">Arial</option>
+      <option value="verdana">Verdana</option>
+      <option value="tahoma">Tahoma</option>
+    </select>
+  </div>
+  <button id="fpReset">↩️ Đặt lại mặc định</button>
+</div>
+
+<footer>N.D.N -0932067877 • IELTS Writing Task 2: Problem &amp; Solution</footer>
+<script>
+/* ===== Tabs ===== */
+const navBtns=document.querySelectorAll('#nav button');
+navBtns.forEach(b=>b.addEventListener('click',()=>{
+  navBtns.forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('section.tab').forEach(s=>s.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.tab).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+
+/* ===== Quiz data ===== */
+const QUIZ=[
+ {q:'Đề: "Traffic congestion is a problem in cities. What problems does it cause and what solutions can you suggest?" — Đây là biến thể nào?',
+  o:['Type A — Problem + Solution','Type B — Cause + Solution','Type C — Cause + Effect','Advantages + Disadvantages'],
+  a:0,e:'Đề hỏi "what problems" (hậu quả) + "what solutions" → đúng dạng Type A: Problem & Solution.'},
+ {q:'Sự khác nhau cốt lõi giữa "cause" và "effect" là gì?',
+  o:['Không có gì khác, dùng thay nhau được','Cause = nguyên nhân (đứng trước vấn đề); Effect = hậu quả (đứng sau vấn đề)','Cause = giải pháp; Effect = vấn đề','Cause dùng cho quá khứ, Effect cho hiện tại'],
+  a:1,e:'Cause đứng TRƯỚC → gây ra vấn đề. Effect đứng SAU → vấn đề gây ra hậu quả. Nhầm hai cái này là lỗi lạc đề nặng nhất của dạng bài này.'},
+ {q:'Yêu cầu quan trọng nhất khi viết đoạn giải pháp trong dạng Problem & Solution là gì?',
+  o:['Nêu càng nhiều giải pháp càng tốt','Giải pháp phải khớp đúng với vấn đề/nguyên nhân đã nêu','Luôn đề xuất giải pháp của chính phủ','Giải pháp phải mang tính cá nhân'],
+  a:1,e:'Giải pháp phải "gỡ" đúng vấn đề đã nêu ở đoạn trước. Giải pháp lệch khỏi vấn đề = mất điểm Coherence & Cohesion.'},
+ {q:'Câu topic sentence nào phù hợp nhất để mở đoạn GIẢI PHÁP?',
+  o:['The most pressing problem is the volume of traffic.','A viable solution would be to expand public transport.','There are many advantages and disadvantages.','In my opinion, this is a serious issue.'],
+  a:1,e:'"A viable solution would be to…" báo hiệu rõ đây là đoạn giải pháp. Câu A là mở đoạn vấn đề, C/D không phù hợp dạng bài.'},
+ {q:'Động từ nào KHÔNG dùng để chỉ NGUYÊN NHÂN (vì sao vấn đề xảy ra)?',
+  o:['stem from','be rooted in','be attributed to','mitigate'],
+  a:3,e:'"Mitigate" nghĩa là giảm nhẹ (vấn đề) — thuộc nhóm GIẢI PHÁP, không phải nguyên nhân. Ba cụm còn lại đều chỉ nguồn gốc.'},
+ {q:'Cấu trúc ngữ pháp nào ghi điểm cao khi diễn tả KẾT QUẢ của một giải pháp?',
+  o:['Câu điều kiện loại 2: If … were …, … would …','Thì hiện tại đơn','Câu mệnh lệnh','Câu hỏi đuôi'],
+  a:0,e:'Câu điều kiện loại 2 (If public transport were better, fewer people would drive) diễn tả kết quả giả định của giải pháp — cấu trúc "vàng" ghi điểm Grammatical Range.'},
+ {q:'Từ nối nào phù hợp để dẫn vào HẬU QUẢ của một vấn đề?',
+  o:['As a result','For example','In my view','On the other hand'],
+  a:0,e:'"As a result / Consequently" nối vấn đề với hậu quả — đúng mạch nhân quả. For example dùng nêu ví dụ; On the other hand dùng cho tương phản.'},
+ {q:'Cụm "go a long way towards reducing emissions" có nghĩa là gì?',
+  o:['Đi một quãng đường dài để giảm khí thải','Góp phần đáng kể vào việc giảm khí thải','Không có tác dụng giảm khí thải','Làm tăng khí thải'],
+  a:1,e:'"go a long way towards + V-ing" = góp phần đáng kể vào việc… — dùng để nhấn mạnh hiệu quả của một giải pháp.'},
+ {q:'Vì sao "The government should solve this problem." là một giải pháp YẾU?',
+  o:['Vì sai ngữ pháp','Vì quá chung chung — không nói AI làm gì và kết quả ra sao','Vì quá dài','Vì dùng từ "government"'],
+  a:1,e:'Giải pháp mạnh phải nêu rõ TÁC NHÂN + HÀNH ĐỘNG CỤ THỂ + KẾT QUẢ. "Should solve this" quá mơ hồ, không ghi điểm ý tưởng.'},
+ {q:'Đề: "What are the reasons for rural-urban migration and what effects does it have?" Bài viết THÊM phần giải pháp sẽ ra sao?',
+  o:['Được cộng điểm vì viết nhiều','Phần giải pháp là THỪA, không được tính điểm và tốn thời gian','Bắt buộc phải có giải pháp','Giúp tăng Task Response'],
+  a:1,e:'Đề chỉ hỏi reasons (nguyên nhân) + effects (hậu quả). Viết thêm giải pháp là trả lời sai nhiệm vụ — phần thừa không được tính, lại mất thời gian quý báu.'},
+ {q:'Từ "exacerbate" /ɪɡˈzæsəbeɪt/ nghĩa là gì?',
+  o:['Giải quyết vấn đề','Làm trầm trọng thêm vấn đề','Bỏ qua vấn đề','Phát hiện vấn đề'],
+  a:1,e:'"Exacerbate/aggravate" = làm trầm trọng thêm. Dùng khi một yếu tố khiến vấn đề tệ hơn — từ vựng Band 8.'},
+ {q:'Nên phát triển đoạn thân bài theo cách nào để đạt Band 7+?',
+  o:['Liệt kê 5 vấn đề, mỗi cái 1 câu','Đi sâu 1–2 ý theo chuỗi: Nêu → Giải thích → Hệ quả/Kết quả','Chỉ viết 1 câu rồi chuyển đoạn','Viết càng nhiều ý càng tốt'],
+  a:1,e:'Chất lượng hơn số lượng: chọn 1–2 ý mạnh, phát triển sâu theo chuỗi nhân quả. Liệt kê nhiều ý hời hợt chỉ đạt Band 6.'}
+];
+
+/* ===== Quiz render + persistence ===== */
+const KEY='popodoo_probsol_v1';
+let state={};
+try{state=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){state={}}
+state.answers=state.answers||{};
+state.checks=state.checks||{};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+
+const quizEl=document.getElementById('quiz');
+function renderQuiz(){
+  quizEl.innerHTML='';
+  QUIZ.forEach((item,i)=>{
+    const card=document.createElement('div');card.className='q-card';
+    card.innerHTML='<div class="q-num">Câu '+(i+1)+' / '+QUIZ.length+'</div><div class="q-text">'+item.q+'</div>';
+    const expl=document.createElement('div');expl.className='expl';expl.innerHTML='💡 '+item.e;
+    item.o.forEach((opt,j)=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=String.fromCharCode(65+j)+'. '+opt;
+      const answered=state.answers[i]!==undefined;
+      if(answered){
+        b.disabled=true;
+        if(j===item.a)b.classList.add('correct');
+        else if(j===state.answers[i])b.classList.add('wrong');
+      }
+      b.addEventListener('click',()=>{
+        if(state.answers[i]!==undefined)return;
+        state.answers[i]=j;save();renderQuiz();updateScore();
+      });
+      card.appendChild(b);
+    });
+    if(state.answers[i]!==undefined)expl.classList.add('show');
+    card.appendChild(expl);
+    quizEl.appendChild(card);
+  });
+}
+function updateScore(){
+  let s=0;
+  Object.keys(state.answers).forEach(k=>{if(state.answers[k]===QUIZ[k].a)s++});
+  document.getElementById('score').textContent=s;
+}
+document.getElementById('resetQuiz').addEventListener('click',()=>{
+  state.answers={};save();renderQuiz();updateScore();
+});
+renderQuiz();updateScore();
+
+/* ===== Checklist persistence ===== */
+document.querySelectorAll('#checklist input').forEach(cb=>{
+  const k=cb.dataset.k;
+  if(state.checks[k]){cb.checked=true;cb.closest('.chk').classList.add('done')}
+  cb.addEventListener('change',()=>{
+    state.checks[k]=cb.checked;save();
+    cb.closest('.chk').classList.toggle('done',cb.checked);
+  });
+});
+
+/* ===== Font settings ===== */
+state.font=state.font||{scale:100,family:'default'};
+const fontBtn=document.getElementById('fontBtn'),
+      fontPanel=document.getElementById('fontPanel'),
+      fsVal=document.getElementById('fsVal'),
+      fontSel=document.getElementById('fontFamily');
+const FAMS=['times','arial','verdana','tahoma'];
+function applyFont(){
+  const s=Math.min(160,Math.max(80,state.font.scale));
+  state.font.scale=s;
+  document.documentElement.style.fontSize=(16*s/100)+'px';
+  fsVal.textContent=s+'%';
+  FAMS.forEach(f=>document.body.classList.remove('f-'+f));
+  if(state.font.family!=='default')document.body.classList.add('f-'+state.font.family);
+  fontSel.value=state.font.family;
+  save();
+}
+fontBtn.addEventListener('click',e=>{e.stopPropagation();fontPanel.classList.toggle('open')});
+fontPanel.addEventListener('click',e=>e.stopPropagation());
+document.addEventListener('click',()=>fontPanel.classList.remove('open'));
+document.getElementById('fsUp').addEventListener('click',()=>{state.font.scale+=10;applyFont()});
+document.getElementById('fsDown').addEventListener('click',()=>{state.font.scale-=10;applyFont()});
+fontSel.addEventListener('change',()=>{state.font.family=fontSel.value;applyFont()});
+document.getElementById('fpReset').addEventListener('click',()=>{state.font={scale:100,family:'default'};applyFont()});
+applyFont();
+</script>
+</body>
+</html>
