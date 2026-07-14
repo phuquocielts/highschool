@@ -134,8 +134,8 @@
   <div class="stages">
     <button class="stage-btn active" data-st="1"><b>1</b>Nghe hiểu</button>
     <button class="stage-btn" data-st="2"><b>2</b>Nhại từng câu</button>
-    <button class="stage-btn locked" data-st="3"><b>3</b>Shadow cùng</button>
-    <button class="stage-btn locked" data-st="4"><b>4</b>Shadow mù</button>
+    <button class="stage-btn" data-st="3"><b>3</b>Shadow cùng</button>
+    <button class="stage-btn" data-st="4"><b>4</b>Shadow mù</button>
   </div>
 
   <!-- ===== CHẶNG 1 ===== -->
@@ -155,8 +155,7 @@
   <!-- ===== CHẶNG 2 ===== -->
   <div class="panel" id="p2">
     <div class="guide"><b>Chặng 2 — Nghe &amp; nhại từng câu:</b> bấm <b>▶ Nghe</b> → nhại to →
-      <b>⏺ Ghi âm</b> → xem bảng chấm điểm và nghe so sánh giọng mình với giọng gốc.
-      Mỗi câu đủ <b>3 lượt</b> để mở khóa Chặng 3.</div>
+      <b>⏺ Ghi âm</b> → xem bảng chấm điểm và nghe so sánh giọng mình với giọng gốc.</div>
     <div class="controls"><span class="speed"></span></div>
     <div id="list2"></div>
   </div>
@@ -165,8 +164,7 @@
   <div class="panel" id="p3">
     <div class="guide"><b>Chặng 3 — Shadow đồng thời:</b> audio giọng thật chạy tuần tự, chữ sáng karaoke —
       nói đè lên, trễ nửa giây, bắt chước ngữ điệu. Cấu hình <b>Nghỉ</b> + <b>Lặp</b>
-      (gợi ý: Lặp 3 lần, Nghỉ 2 giây). Nghỉ từ 2 giây sẽ có nhắc <b>"Nhại ngay đi!"</b>.
-      Xong 3 lượt cả đoạn để mở Chặng 4.</div>
+      (gợi ý: Lặp 3 lần, Nghỉ 2 giây). Nghỉ từ 2 giây sẽ có nhắc <b>"Nhại ngay đi!"</b>.</div>
     <div class="controls">
       <button class="btn primary" id="playAll3">▶ Bắt đầu shadow</button>
       <button class="btn" id="stop3">⏹ Dừng</button>
@@ -401,7 +399,7 @@ const RecorderModule = (() => {
       btn.classList.add("recording"); btn.textContent = "⏹ Dừng ghi";
     }catch(err){
       document.getElementById("micNote").textContent =
-        "⚠️ Không mở được micro. Cho phép quyền micro trong trình duyệt (🔒 cạnh thanh địa chỉ). Vẫn luyện được bằng nút ✓ đã nhại.";
+        "⚠️ Không mở được micro. Cho phép quyền micro trong trình duyệt (🔒 cạnh thanh địa chỉ). Vẫn nghe và luyện nhại bình thường.";
     }
   }
   function playback(idx){ if(urls[idx]) new Audio(urls[idx]).play(); }
@@ -494,7 +492,7 @@ function addRep(idx){
   if(state.reps[idx] < REPS_NEEDED*2) state.reps[idx]++;
   save(); refresh();
   const c = document.getElementById("cnt"+idx);
-  if(c) c.innerHTML = "Đã nhại: <b>" + state.reps[idx] + "</b>/" + REPS_NEEDED;
+  if(c) c.innerHTML = "Đã ghi âm: <b>" + state.reps[idx] + "</b> lần";
 }
 function stage2Done(){ return state.reps.every(r => r >= REPS_NEEDED); }
 function refresh(){
@@ -502,8 +500,6 @@ function refresh(){
   const done = state.reps.reduce((a,b)=>a+Math.min(b,REPS_NEEDED),0)
              + Math.min(state.r3,ROUNDS_NEEDED) + Math.min(state.r4,ROUNDS_NEEDED);
   document.getElementById("pbar").style.width = Math.round(done/total*100) + "%";
-  document.querySelector('[data-st="3"]').classList.toggle("locked", !stage2Done());
-  document.querySelector('[data-st="4"]').classList.toggle("locked", state.r3 < ROUNDS_NEEDED);
   document.getElementById("c3").textContent = Math.min(state.r3,ROUNDS_NEEDED);
   document.getElementById("c4").textContent = Math.min(state.r4,ROUNDS_NEEDED);
 }
@@ -545,8 +541,7 @@ function build(){
           <button class="mini" onclick="playOne('#p2',${i})">▶ Nghe</button>
           <button class="mini rec" onclick="RecorderModule.toggle(${i}, this)">⏺ Ghi âm</button>
           <button class="mini hidden" id="rp${i}" onclick="RecorderModule.playback(${i})">🎧 Nghe giọng mình</button>
-          <button class="mini" onclick="addRep(${i})">✓ đã nhại</button>
-          <span class="count" id="cnt${i}">Đã nhại: <b>${state.reps[i]}</b>/${REPS_NEEDED}</span>
+          <span class="count" id="cnt${i}">Đã ghi âm: <b>${state.reps[i]}</b> lần</span>
         </div>
         <div class="fb hidden" id="fb${i}"></div>
       </div>`);
@@ -594,7 +589,6 @@ build(); refresh();
 /* ================= SỰ KIỆN ================= */
 document.querySelectorAll(".stage-btn").forEach(btn => {
   btn.onclick = () => {
-    if(btn.classList.contains("locked")){ toast("Hoàn thành chặng trước để mở khóa 🔒"); return; }
     Sequencer.stop();
     document.querySelectorAll(".stage-btn").forEach(b=>b.classList.remove("active"));
     document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
@@ -606,7 +600,7 @@ document.getElementById("playAll1").onclick = () => Sequencer.play("#p1");
 document.getElementById("stop1").onclick = Sequencer.stop;
 document.getElementById("playAll3").onclick = () => Sequencer.play("#p3", () => {
   state.r3++; save(); refresh();
-  toast(state.r3 >= ROUNDS_NEEDED ? "🎉 Mở khóa Chặng 4!" : "Xong lượt " + state.r3 + "/" + ROUNDS_NEEDED);
+  toast(state.r3 >= ROUNDS_NEEDED ? "🎉 Tuyệt vời! Thử tiếp Chặng 4 nhé" : "Xong lượt " + state.r3 + "/" + ROUNDS_NEEDED);
 });
 document.getElementById("stop3").onclick = Sequencer.stop;
 document.getElementById("playAll4").onclick = () => Sequencer.play("#p4", () => {
